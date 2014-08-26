@@ -1,0 +1,30 @@
+build/
+target/
+
+
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# build files #
+*.tmp
+*.md5
+
+# runtime files #
+*.pid
+*.log
+*.log.*
+
+.project
+.idea
+/bin
+*.iml
+.classpath
+out/*
+argfile*
+
+.DS_Store
+.settings

@@ -1,0 +1,115 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.intuit.services.common</groupId>
+  <artifactId>raml2swagger</artifactId>
+  <packaging>war</packaging>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>raml2swagger Maven Webapp</name>
+
+	<properties>
+		<jdk.version>1.6</jdk.version>
+		<spring.version>3.0.5.RELEASE</spring.version>
+		<jsr311.version>1.1.1</jsr311.version>
+		<jersey.version>1.17.1</jersey.version>
+		<jersey.groupid>com.sun.jersey</jersey.groupid>
+		<json.jackson.version>1.9.12</json.jackson.version>
+	</properties>
+
+	<dependencies>
+	    <dependency>
+	      <groupId>junit</groupId>
+	      <artifactId>junit</artifactId>
+	      <version>3.8.1</version>
+	      <scope>test</scope>
+	    </dependency>
+		<!-- .. -->
+		<!-- RESTful web service: Jersey -->		
+		<dependency>
+		    <groupId>com.sun.jersey</groupId>
+		    <artifactId>jersey-server</artifactId>
+		    <version>1.17.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.sun.jersey</groupId>
+		    <artifactId>jersey-servlet</artifactId>
+		    <version>1.17.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.sun.jersey</groupId>
+		    <artifactId>jersey-json</artifactId>
+		    <version>1.17.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>1.17.1</version>
+		</dependency>
+		<!-- .. -->  
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>jsr311-api</artifactId>
+			<version>${jsr311.version}</version>
+		</dependency>  
+		
+		<!-- jackson JSON parser -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-asl</artifactId>
+			<version>${json.jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey.contribs</groupId>
+			<artifactId>jersey-spring</artifactId>
+			<version>${jersey.version}</version>
+			<!-- exclude spring dependencies coming from Jersey -->
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-core</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-beans</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-context</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-aop</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-web</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun.jersey.contribs</groupId>
+			<artifactId>jersey-multipart</artifactId>
+			<version>1.17.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.raml</groupId>
+			<artifactId>raml-parser</artifactId>
+			<version>0.9-SNAPSHOT</version>
+		</dependency>		
+<!-- 		
+		<dependency>
+			<groupId>com.wordnik</groupId>
+			<artifactId>swagger-codegen_2.10</artifactId>
+			<version>2.0.3</version>
+		</dependency>		
+ -->				
+  </dependencies>
+  
+  <build>
+    <finalName>raml2swagger</finalName>
+  </build>
+
+</project>
+
